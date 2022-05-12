@@ -1,0 +1,25 @@
+<title>Golden Watch Login</title>
+<div id="login-wrapper">
+  <div class="logo__Login">
+    <a href="./Index.html"><img style="height: 400px;" src="./assets/img/GoldenWatch.png" alt="Logo Golden Watch"></a>
+  </div>
+  <form class="login__Form" action="./dang-nhap" method="post">
+    <div class="form__row">
+      <label class="form__label" for="name">Tên Đăng Nhập</label>
+      <input class="form__input" type="text" placeholder="Nhập tên đăng nhập..." name="TaiKhoan" id="">
+    </div>
+    <div class="form__row">
+      <label class="form__label" for="name">Mật Khẩu</label>
+      <input class="form__input" type="password" placeholder="Nhập mật khẩu..." name="MatKhau" id="">
+    </div>
+    <div class="form__row-register">
+      <label class="form__label" for="register">Chưa có tài khoản??? <a href="./dang-ky">ĐĂNG KÍ NGAY!!</a></label>
+    </div>
+    <div class="form__row">
+      {{#if hasMessage}}
+      <div style="color: red;"> {{message}}</div>
+      {{/if}}
+    </div>
+    <button class="button-5" type="submit">ĐĂNG NHẬP</button>
+  </form>
+</div>

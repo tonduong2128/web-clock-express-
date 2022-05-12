@@ -1,0 +1,49 @@
+
+
+/* Mobile và tablet */
+@media (max-width: 63.9375em) {
+
+}  
+
+/* tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em){
+    .header__wrapper {
+        width: 100%;
+    }
+
+    .content__wrapper .content__heading {
+        width: 100%;
+    }
+    
+    .content__wrapper .content__container .content__detailWatch {
+        flex-direction: column;
+    }
+
+    .content__wrapper .content__container .content__detailWatch .detailWatch__img img {
+        width: 100%;
+    }
+
+    .content__Essay .main__goodEssay {
+        flex-direction: column;
+    }
+
+    .content__Essay .main__goodEssay .goodEssay__img img {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    #page-wrapper > div.content__wrapper > div.content__Essay > div > div.goodEssay__text > p {
+        margin: 0 10px;
+    }
+
+    .rightSide__cate {
+        display: none;
+    }
+}
+
+/* Moblie */
+@media (max-width: 46.1875em) {
+    .header__wrapper {
+        display: none;
+    }
+}

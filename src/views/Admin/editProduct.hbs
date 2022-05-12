@@ -1,0 +1,66 @@
+{{#if product}}
+<form action="./sua-san-pham?_id={{product._id}}" enctype="multipart/form-data" method="post">
+    <div class="form-group">
+        <label for="nameProduct">Tên sản phẩm</label>
+        <input type="" class="form-control" name="TenSanPham" id="nameProduct" value="{{product.TenSanPham}}"
+            placeholder="Tên sản phẩm">
+    </div>
+    <div class="form-group">
+        <label for="madein">Xuất xứ</label>
+        <input type="" value="{{product.XuatXu}}" name="XuatXu" class="form-control" id="madein" placeholder="Xuất xứ">
+    </div>
+    <div class="form-group">
+        <label for="radius">Đường kính mặt số</label>
+        <input type="" value="{{product.DuongKinhMatSo}}" name="DuongKinhMatSo" class="form-control" id="radius"
+            placeholder="Đường kính mặt số">
+    </div>
+    <div class="form-group">
+        <label for="width">Bề dày mặt số</label>
+        <input type="" value="{{product.BeDayMatSo}}" name="BeDayMatSo" class="form-control" id="width"
+            placeholder="Bề dày mặt số">
+    </div>
+    <div class="form-group">
+        <label for="nieng">Niềng</label>
+        <input type="" value="{{product.Nieng}}" name="Nieng" class="form-control" id="nieng" placeholder="Niềng">
+    </div>
+    <div class="form-group">
+        <label for="price">Giá bán</label>
+        <input type="" value="{{product.GiaBan}}" name="GiaBan" class="form-control" id="price" placeholder="Giá bán">
+    </div>
+
+    <div class="form-group">
+        <label for="sl">Số lượng tồn</label>
+        <input type="" value="{{product.SoLuongTon}}" name="SoLuongTon" class="form-control" id="sl"
+            placeholder="Số lượng tồn">
+    </div>
+    <div class="form-group">
+        <div style="display: block;">
+            <img src="{{product.LinkHinhAnh}}" class="imgcurr" width="100px" alt="">
+            <input type="text" name="oldUrlImg" hidden value="{{product.LinkHinhAnh}}">
+        </div>
+        <label for="image" style="display: inline;">Chọn hình ảnh</label> <br>
+        <input style="display: inline;" type="file" name="anh" onchange="loadFile(event)" class="form-control-file"
+            placeholder="" id="image">
+    </div>
+    <div class="form-group">
+        <label for="chucnang">Chức năng</label>
+        <input style="display: inline;" type="" name="ChucNang" class="form-control " value="{{product.ChucNang}}"
+            placeholder="" id="chucnang">
+    </div>
+    <div class="form-group">
+        <label for="descreption">Mô tả sản phẩm</label>
+        <textarea class="form-control" id="descreption" name="MoTaChung" rows="2">{{product.MoTaChung}}
+        </textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Lưu</button>
+</form>
+{{/if}}
+<script>
+    var loadFile = function (event) {
+        var output = document.querySelector('.imgcurr');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function () {
+            URL.revokeObjectURL(output.src)
+        }
+    };
+</script>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!---------------------------------------- Reset css-------------------------------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <script src="./main.js"></script>
+    <!------------------------------------------Polyfill-------------------------------------->
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+
+    <title>Golden Watch</title>
+
+</head>
+<!--------------------------------Header------------------------------------>
+
+<body>
+    <div id="page-wrapper">
+        <div class="header__wrapper">
+            <div class="header__main-nav">
+                <div class="logo">
+                    <a href="./"><img src="assets/img/GoldenWatch.png" alt="" style="height:142px;" /></a>
+                </div>
+                <div class="main-nav__content">
+                    <ul>
+                        <li>
+                            <a href="#">THƯƠNG HIỆU</a>
+                            <ul class="submenu">
+                                <h4 style="text-align: center">
+                                    <strong>
+                                        <span> </span>
+                                    </strong>
+                                </h4>
+                                {{#each brands}}
+                                <li> <a href="#">{{this.TenThuongHieu}}</a></li>
+                                {{/each}}
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">NAM</a>
+                            <ul class="submenu">
+                                <h4 style="text-align: center">
+                                    <strong>
+                                        <span> Thương Hiệu </span>
+                                    </strong>
+                                </h4>
+                                {{#each brands}}
+                                <li> <a href="#">{{this.TenThuongHieu}}</a></li>
+                                {{/each}}
+                   
+
+                                <h4 style="text-align: center">
+                                    <strong>
+                                        <span> Loại Dây </span>
+                                    </strong>
+                                </h4>
+                                {{#each straps}}
+                                <li> <a href="#">{{this.TenDayDeo}}</a></li>
+                                {{/each}}
+                                {{!-- <li><a href="#">DÂY DA</a></li>
+                                <li><a href="#">DÂY KIM LOẠI</a></li>
+                                <li><a href="#">DÂY CAO SU</a></li> --}}
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">NỮ</a>
+                            <ul class="submenu">
+                                <h4 style="text-align: center">
+                                    <strong>
+                                        <span> Thương Hiệu </span>
+                                    </strong>
+                                </h4>
+                                {{#each brands}}
+                                <li> <a href="#">{{this.TenThuongHieu}}</a></li>
+                                {{/each}}
+                                {{!-- <li><a href="#">SEIKO</a></li>
+                                <li><a href="./detail-category.html">ORIENT</a></li>
+                                <li><a href="#">TISSOT</a></li>
+                                <li><a href="#">G-SHOCK</a></li>
+                                <li><a href="#">DOXA</a></li> --}}
+
+                                <h4 style="text-align: center">
+                                    <strong>
+                                        <span> Loại Dây </span>
+                                    </strong>
+                                </h4>
+                                {{#each straps}}
+                                <li> <a href="#">{{this.TenDayDeo}}</a></li>
+                                {{/each}}
+                                {{!-- <li><a href="#">DÂY DA</a></li>
+                                <li><a href="#">DÂY KIM LOẠI</a></li>
+                                <li><a href="#">DÂY CAO SU</a></li> --}}
+                            </ul>
+                        </li>
+                        <li><a href="#">CẶP ĐÔI</a></li>
+                        <li>
+                            <a href="#">PHỤ KIỆN</a>
+                            <ul class="submenu">
+                                <h4 style="text-align: center">
+                                    <strong>
+                                        <span> </span>
+                                    </strong>
+                                </h4>
+                                <li><a href="#">DÂY DA ĐỒNG HỒ</a></li>
+                                <li><a href="#">TRANG SỨC</a></li>
+                                <li><a href="#">HỘP XOAY</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">GIỎ HÀNG</a>
+                            <ul class="submenu">
+                                <h4 style="text-align: center">
+                                    <strong>
+                                        <span> </span>
+                                    </strong>
+                                </h4>
+                                <li><a href="./gio-hang">Sản phẩm trong giỏ hàng</a></li>
+                                <li><a href="./don-hang">Sản phẩm đã đặt hàng</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">LIÊN HỆ</a>
+                            <ul class="submenu">
+                                <h4 style="text-align: center">
+                                    <strong>
+                                        <span> </span>
+                                    </strong>
+                                </h4>
+                                <li><a href="#">GIỚI THIỆU</a></li>
+                                <li><a href="#">THÔNG TIN LIÊN HỆ</a></li>
+                            </ul>
+                        </li>
+                        {{#if userId}}
+                        <li>
+                            <div>TÀI KHOẢN</div>
+                            <ul class="submenu">
+                                <h4 style="text-align: center">
+                                    <strong>
+                                        <span> </span>
+                                    </strong>
+                                </h4>
+                                <li><a href="./dang-xuat" style="display: block;">ĐĂNG XUẤT</a></li>
+                                {{#if adminId}}
+                                <li><a href="./admin" style="display: block;">ĐẾN TRANG QUẢN TRỊ</a></li>
+                                {{else}}
+                                <li> <a href="./thong-tin-tai-khoan?userId={{userId}}" style="display: block;">THÔNG TIN
+                                        TÀI KHOẢNG</a></li>
+                                {{/if}}
+                            </ul>
+                        </li>
+                        {{else}}
+                        <li><a href="./dang-nhap">ĐĂNG NHẬP</a></li>
+                        {{/if}}
+                    </ul>
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,68 @@
+<!------------------------------------Content---------------------------->
+
+<div class="content__wrapper">
+
+  <div class="content__heading">
+
+    <div class="row-fluid">
+      <span>
+        <h1 class="title">
+          <span style="background-color: #ffffff">GIỎ HÀNG</span>
+        </h1>
+        <nav class="menu__belowTitle">
+          <a href="./Index.html">Trang chủ</a>
+          &nbsp;/&nbsp;Giỏ Hàng
+        </nav>
+      </span>
+    </div>
+
+    <div class="content__container--Cart">
+      <div class="content__detailCart">
+        <div id="toast"></div>
+        <div class="detailCart__info">
+          <table class="detailCart__info--table" style="width: 100%;">
+            <thead>
+              <tr>
+                <th style="width: 309px;" class="product__name--cart">TÊN SẢN PHẨM</th>
+                <th style="width: 309px;" class="product__name--cart">HÌNH ẢNH</th>
+                <th class="product__price--cart">GIÁ</th>
+                <th class="product__quantity--cart">SỐ LƯỢNG</th>
+                <th class="product__subtotal--cart">XÁC NHẬN ĐÃ NHẬN HÀNG</th>
+                <th class="product__remove--cart">&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each orders}}
+              <tr class="detailCart__dataTable">
+                <td class="product__name--cart">{{this.TenSanPham}}</td>
+                <td class="product__img--cart">
+                  <img src="{{this.LinkHinhAnh}}" alt="Ảnh sản phẩm" width="80px">
+                </td>
+                <td class="product__price--cart">{{this.GiaBan}}</td>
+                <td class="product__quantity--cart">1</td>
+                {{!-- <td class="product__quantity--cart">{{this.SoLuong}}</td> --}}
+                <td class="product__remove--cart">
+                  {{#if (compareTo this.TinhTrangGiaoHang -1) }}
+                  Đang chờ xác nhận <br>
+                  <a style="color: red;text-decoration: underline;"
+                    onclick="return confirm('Bạn xác nhận đã giao hàng cho shipper')"
+                    href="./huy-don-hang?_id={{this._id}}">Hủy đơn hàng</a>
+                  {{else}}
+                  {{#if (compareTo this.TinhTrangGiaoHang 0)}}
+                  <a style="color: red;text-decoration: underline;"
+                    onclick="return confirm('Bạn xác nhận đã nhận hàng từ shipper')"
+                    href="./da-giao-hang?_id={{this._id}}">Xác nhận đã giao</a>
+                  {{else}}
+                    Đã nhận hàng
+                  {{/if}}
+                  {{/if}}
+                </td>
+              </tr>
+              {{/each}}
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

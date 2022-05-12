@@ -1,0 +1,138 @@
+<!------------------------------------Content---------------------------->
+
+<div class="content__wrapper">
+
+  <div class="content__heading">
+
+    <div class="row-fluid">
+      <span>
+        <h1 class="title detailWatch__titleName">
+          <span style="background-color: #ffffff">Orient</span>
+        </h1>
+        <nav class="menu__belowTitle">
+          <a href="./Index.html">Trang chủ</a>
+          &nbsp;/&nbsp;
+          <a href="./Index.html">Đồng Hồ Nam</a>
+          &nbsp;/&nbsp;Orient
+        </nav>
+      </span>
+    </div>
+
+  </div>
+
+  <div class="content__container">
+    <div class="content__detailWatch">
+      {{#if product}}
+      <div class="detailWatch__img">
+        <img src="{{product.LinkHinhAnh}} " alt="">
+      </div>
+      <div class="detailWatch__info">
+        <h3>THÔNG TIN SẢN PHẨM</h3>
+        <div class="product__ID__Data">
+          Mã số sản phẩm: {{product._id}}
+        </div>
+        <div class="product__price">
+          <h1 class="product__price__Data">{{product.GiaBan}} đ</h2>
+        </div>
+
+        <div class="product__description">
+          {{product.MoTaChung}}
+        </div>
+        <div id="toast"></div>
+        <div class="product__addToCart">
+          <a href="./them-san-pham?_id={{product._id}}">
+            <div onclick="showSuccessToast();" class="btn btn__addToCart">Thêm Vào Giỏ Hàng</div>
+          </a>
+        </div>
+      </div>
+      {{/if}}
+
+    </div>
+    <div class="content__rightSide">
+      <form action="#" class="rightSide__cate">
+        <div class="sideBar__row" data-colum="1">
+          <div class="form-logo">
+            <span class="widget__title">
+              <h4 class="form__widget__title">THƯƠNG HIỆU</h4>
+            </span>
+            {{#if brand}}
+            <img width="200px" src="{{brand.LinkHinhAnh}}" alt="">
+            {{/if}}
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <div class="content__table">
+    <div class="content__table--title">
+      <h3>Mô tả sản phẩm</h2>
+    </div>
+    <div class="content__table--info">
+      <table class="content__table__detail">
+        <tr style="box-sizing: border-box;" class="row-info">
+          <td class="content__table__detailName">
+            <span class="content__table__detailName__Data">THƯƠNG HIỆU</span>
+          </td>
+          <td class="content__table__detailData">
+            <span class="content__table__detailData__Data">
+              {{#if brand}}
+              {{brand.TenThuongHieu}}
+              {{/if}}
+            </span>
+          </td>
+        </tr>
+        <tr style="box-sizing: border-box;" class="row-info">
+          <td class="content__table__detailName">
+            <span class="content__table__detailName__Data">GIỚI TÍNH</span>
+          </td>
+          <td class="content__table__detailData">
+            <span class="content__table__detailData__Data">Nam</span>
+          </td>
+        </tr>
+        <tr style="box-sizing: border-box;" class="row-info">
+          <td class="content__table__detailName">
+            <span class="content__table__detailName__Data">LOẠI DÂY</span>
+          </td>
+          <td class="content__table__detailData">
+            <span class="content__table__detailData__Data">Dây Da</span>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="content__Essay">
+    <h2 style="text-align: center">
+      <strong>
+        <span> BÀI VIẾT HAY </span>
+      </strong>
+    </h2>
+
+    <div class="main__goodEssay">
+      <div class="goodEssay__img">
+        <img src="./assets/img/goodEssay.jpg" alt="" />
+      </div>
+      <div class="goodEssay__text">
+        <h2>Lorem</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos
+          nostrum modi magni fugiat! Adipisci quasi cupiditate nam quia,
+          expedita veniam vitae iusto tenetur ducimus ratione, maiores id
+          quae aliquam provident. Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Eos nostrum modi magni fugiat! Adipisci quasi
+          cupiditate nam quia, expedita veniam vitae iusto tenetur ducimus
+          ratione, maiores id quae aliquam provident. Lorem ipsum, dolor
+          sit amet consectetur adipisicing elit. Eos nostrum modi magni
+          fugiat! Adipisci quasi cupiditate nam quia, expedita veniam
+          vitae iusto tenetur ducimus ratione, maiores id quae aliquam
+          provident. Lorem ipsum, dolor sit amet consectetur adipisicing
+          elit. Eos nostrum modi magni fugiat! Adipisci quasi cupiditate
+          nam quia, expedita veniam vitae iusto tenetur ducimus ratione,
+          maiores id quae aliquam provident.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>

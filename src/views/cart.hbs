@@ -1,0 +1,86 @@
+<!------------------------------------Content---------------------------->
+
+<div class="content__wrapper">
+
+  <div class="content__heading">
+
+    <div class="row-fluid">
+      <span>
+        <h1 class="title">
+          <span style="background-color: #ffffff">GIỎ HÀNG</span>
+        </h1>
+        <nav class="menu__belowTitle">
+          <a href="./Index.html">Trang chủ</a>
+          &nbsp;/&nbsp;Giỏ Hàng
+        </nav>
+      </span>
+    </div>
+
+  </div>
+
+  <div class="content__container--Cart">
+
+    <div class="content__detailCart">
+      <div id="toast"></div>
+      <div class="detailCart__info">
+        <table class="detailCart__info--table">
+          <thead>
+            <tr>
+              <th style="width: 90px;" class="product__thumbnail--hidden">&nbsp;</th>
+              <th style="width: 309px;" class="product__name--cart">TÊN SẢN PHẨM</th>
+              <th class="product__price--cart">HÌNH ẢNH</th>
+              <th class="product__price--cart">GIÁ</th>
+              <th class="product__quantity--cart">SỐ LƯỢNG</th>
+              <th class="product__subtotal--cart">TỔNG GIÁ</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each carts}}
+            <tr class="detailCart__dataTable">
+              <td class="product__name--cart">{{this.TenSanPham}}</td>
+              <td class="product__img--cart">
+                <img src="{{this.LinkHinhAnh}}" alt="Ảnh sản phẩm" width="80px">
+              </td>
+              <td class="product__price--cart">{{this.GiaBan}}</td>
+              <td class="product__quantity--cart">{{this.SoLuong}}</td>
+              <td class="product__subtotal--cart">{{this.TongTien}}</td>
+              <td class="product__remove--cart">
+                <a href="./xoa-san-phan?_id={{this._id}}" style="text-decoration: underline;">Xóa</a>
+              </td>
+            </tr>
+            {{/each}}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="content__rightSide">
+      <div class="finalPrice">
+        <div class="finalPrice__info">
+          <h2>TỔNG SỐ LƯỢNG</h2>
+          <table class="finalPrice__info--table">
+            <tbody>
+              <tr class="cart__subFinal">
+                <th>Tổng phụ:</th>
+                <td><span>{{#if total}} {{total}} {{/if}}</span></td>
+              </tr>
+              <tr class="cart__mainFinal">
+                <th>TỔNG:</th>
+                <td><span>{{#if total}} {{total}} {{/if}}</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="product__PayMent">
+          <button onclick="showSuccessToast();" class="btn btn__PayMent" style="display: block;">
+            <a href="./dat-hang" onclick="return confirm('Bạn có muốn xác nhận đặt hàng')" style="color: #ffffff; display: block;">
+              Đặt hàng  
+            </a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content__table">
+  </div>
+</div>

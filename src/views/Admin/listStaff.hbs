@@ -1,0 +1,41 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Họ tên</th>
+            <th scope="col">Tài khoản</th>
+            <th scope="col">Địa chỉ </th>
+            <th scope="col">Chức vụ</th>
+            <th scope="col">Địa chỉ</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each staffs}}
+        <tr>
+            <th scope="row">1</th>
+            <td>{{this.HoTenNhanVien}}</td>
+            <td>
+                {{this.TaiKhoan}}
+            </td>
+            <td>
+                {{this.DiaChi}}
+            </td>
+            <td>
+                {{this.TenChucVu}}
+            </td>
+            <td>
+                {{this.SoDienThoai}}
+            </td>
+            <td >
+                {{#if this.hasDel}}
+                <a onclick="return confirm('Bạn có chắc chắn muốn xóa')" href="./xoa-nhan-vien?_id={{this._id}}">Xóa</a>
+                {{else}}
+                <a style="pointer-events: none; color: #ccc;" href="./xoa-nhan-vien?_id={{this._id}}">Xóa</a>
+                {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+
+    </tbody>
+</table>

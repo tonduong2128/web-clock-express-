@@ -1,0 +1,50 @@
+<form method="post" action="./them-nhan-vien">
+    <div class="form-group">
+        <label for="nameProduct">Tên nhân viên</label>
+        <input required type="" name="HoTenNhanVien" class="form-control" id="nameProduct" placeholder="Tên nhân viên">
+    </div>
+    <div class="form-group">
+        <label for="madein">Tài khoản</label>
+        <input required type="" name="TaiKhoan" class="form-control" id="madein" placeholder="Tài khoản">
+    </div>
+    <div class="form-group">
+        <label for="radius">Mật khẩu</label>
+        <input required type="password" name="MatKhau" class="form-control" id="radius" placeholder="Mật khẩu">
+    </div>
+    <div class="form-group">
+        <label for="width">Địa chỉ</label>
+        <input type="text" class="form-control" name="DiaChi" id="width" placeholder="Địa chỉ">
+    </div>
+    <div class="form-group">
+        <label for="nieng">Số điện thoại</label>
+        <input type="" class="form-control" name="SoDienThoai" id="nieng" placeholder="Số điện thoại">
+    </div>
+    <div class="form-group">
+        <label for="price">Ngày sinh</label>
+        <input type="number" class="form-control" name="NgaySinh" id="price" placeholder="Ngày sinh">
+    </div>
+
+    <div class="form-group mt-2">
+        <label for="mail">Nam</label>
+        <input type="radio" value="1" id="mail" name="GioiTinh">
+        <label for="femail">Nữ</label>
+        <input type="radio" value="0" id="femail" name="GioiTinh">
+    </div>
+
+    <div class="form-group">
+        {{#if hasDel}}
+        <button type="submit" class="btn btn-primary">Thêm mới</button>
+        {{else}}
+        <button disabled type="submit" class="btn btn-primary">Thêm mới</button>
+        {{/if}}
+    </div>
+</form>
+<script>
+    var loadFile = function (event) {
+        var output = document.querySelector('.imgcurr');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function () {
+            URL.revokeObjectURL(output.src)
+        }
+    };
+</script>

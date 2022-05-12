@@ -1,0 +1,38 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Tên sản phẩm</th>
+            <th scope="col">Hình ảnh</th>
+            <th scope="col">Xuất xứ</th>
+            <th scope="col">Giá bán</th>
+            <th scope="col">Mô tả chung</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each products}}
+        <tr>
+            <th scope="row">1</th>
+            <td>{{this.TenSanPham}}</td>
+            <td>
+                <img width="100px" src="{{this.LinkHinhAnh}}" alt="Ảnh sản phẩm">
+            </td>
+            <td>
+                {{this.XuatXu}}
+            </td>
+            <td>
+                {{this.GiaBan}}
+            </td>
+            <td>
+                {{strFormat this.MoTaChung 100}}
+            </td>
+            <td>
+                <a href="./sua-san-pham?_id={{this._id}}">Sửa</a>
+                <a onclick="return confirm('Bạn có chắc chắn muốn xóa')" href="./xoa-san-pham?_id={{this._id}}">Xóa</a>
+            </td>
+        </tr>
+        {{/each}}
+
+    </tbody>
+</table>

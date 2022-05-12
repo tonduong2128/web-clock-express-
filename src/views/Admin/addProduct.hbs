@@ -1,0 +1,62 @@
+<form method="post" action="./them-san-pham" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="nameProduct">Tên sản phẩm</label>
+        <input type="" name="TenSanPham" class="form-control" id="nameProduct" placeholder="Tên sản phẩm">
+    </div>
+    <div class="form-group">
+        <label for="madein">Xuất xứ</label>
+        <input type="" name="XuatXu" class="form-control" id="madein" placeholder="Xuất xứ">
+    </div>
+    <div class="form-group">
+        <label for="radius">Đường kính mặt số</label>
+        <input type="number" step="0.01" name="DuongKinhMatSo" class="form-control" id="radius"
+            placeholder="Đường kính mặt số">
+    </div>
+    <div class="form-group">
+        <label for="width">Bề dày mặt số</label>
+        <input type="number" step="0.01" class="form-control" name="BeDayMatSo" id="width" placeholder="Bề dày mặt số">
+    </div>
+    <div class="form-group">
+        <label for="nieng">Niềng</label>
+        <input type="" class="form-control" name="Nieng" id="nieng" placeholder="Niềng">
+    </div>
+    <div class="form-group">
+        <label for="price">Giá bán</label>
+        <input type="number" class="form-control" name="GiaBan" id="price" placeholder="Giá bán">
+    </div>
+
+    <div class="form-group">
+        <label for="sl">Số lượng tồn</label>
+        <input type="number" class="form-control" id="sl" name="SoLuongTon" placeholder="Số lượng tồn">
+    </div>
+
+    <div class="form-group">
+        <div style="display: block;">
+            <img src="{{product.LinkHinhAnh}}" class="imgcurr" width="100px" alt="">
+        </div>
+        <label for="image">Chọn hình ảnh</label> <br>
+        <input type="file" class="form-control-file" onchange="loadFile(event)" placeholder="" name="anh" id="image">
+    </div>
+
+    <div class="form-group">
+        <label for="descreption">Mô tả sản phẩm</label>
+        <textarea class="form-control" id="descreption" name="MoTaChung" rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="userful">Chức năng</label>
+        <input type="" class="form-control" name="ChucNang" id="userful" placeholder="Chức năng">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Thêm mới</button>
+    </div>
+</form>
+<script>
+    var loadFile = function (event) {
+        var output = document.querySelector('.imgcurr');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function () {
+            URL.revokeObjectURL(output.src)
+        }
+    };
+</script>

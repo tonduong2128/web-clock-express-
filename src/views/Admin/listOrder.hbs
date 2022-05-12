@@ -1,0 +1,66 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Tên sản phẩm</th>
+            <th scope="col">Hình ảnh</th>
+            <th scope="col">Giá bán</th>
+            <th scope="col">Địa chỉ khách hàng</th>
+            <th scope="col">Tình trạng đơn hàng</th>
+            <th scope="col">Ngày đặt</th>
+            <th scope="col">Ngày giao</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each orders}}
+        <tr>
+            <th scope="row">1</th>
+            <td>{{this.TenSanPham}}</td>
+            <td>
+                <img width="100px" src="{{this.LinkHinhAnh}}" alt="Ảnh sản phẩm">
+            </td>
+            <td>
+                {{this.GiaBan}}
+            </td>
+            <td>
+                {{this.DiaChiKhachHang}}
+            </td>
+            <td>
+                {{#if this.TinhTrangGiaoHang}}
+                "Đang Giao"
+                {{else}}
+                "Chưa giao"
+                {{/if}}
+            </td>
+            <td>
+                {{this.NgayDat}}
+            </td>
+            <td>
+                {{this.NgayGiao}}
+            </td>
+            <td>
+                {{#if (compareTo this.TinhTrangGiaoHang -1) }}
+                <a onclick="return confirm('Bạn xác nhận đã giao hàng cho shipper')"
+                    href="./dang-giao-hang?_id={{this._id}}">Giao hàng</a>
+                <br>
+                <a onclick="return confirm('Bạn xác xóa đơn này')" href="./xoa-don-hang?_id={{this._id}}">Xóa</a>
+                {{else}}
+                {{#if (compareTo this.TinhTrangGiaoHang 0)}}
+                <a style="pointer-events: none; color: #ccc;"
+                    onclick="return confirm('Bạn xác nhận đã giao hàng cho shipper')"
+                    href="">Đang giao</a>
+                {{else}}
+                <a style="pointer-events: none; color: #ccc;"
+                    onclick="return confirm('Bạn xác nhận đã giao hàng cho shipper')"
+                    href="">Đã giao</a>
+                <br>
+                <a onclick="return confirm('Bạn xác xóa đơn này')" href="./xoa-don-hang?_id={{this._id}}">Xóa</a>
+                {{/if}}
+                {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+
+    </tbody>
+</table>
