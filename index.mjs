@@ -18,6 +18,11 @@ try {
     return;
   });
 }
+app.use("", (req, res) => {
+  res.json({ message: 1 });
+  return;
+});
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -33,6 +38,6 @@ app.engine(
 app.set("view engine", ".hbs");
 app.set("views", "./src/views");
 
-routes(app);
+// routes(app);
 
 app.listen(3000);
