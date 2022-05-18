@@ -18,7 +18,9 @@ try {
     return;
   });
 }
-
+app.use("", (req, res) => {
+  res.json({ message: 2 });
+});
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
