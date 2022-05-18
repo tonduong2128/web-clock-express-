@@ -2,9 +2,9 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import express from "express";
 import { engine } from "express-handlebars";
-import db from "./database/db.mjs";
-import routes from "./routes/index.mjs";
-import functionHelper from "./util/functionHelper.mjs";
+import db from "./src/database/db.mjs";
+import routes from "./src/routes/index.mjs";
+import functionHelper from "./src/util/functionHelper.mjs";
 import dotenv from "dotenv";
 
 dotenv.config();
