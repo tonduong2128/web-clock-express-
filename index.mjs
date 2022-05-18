@@ -10,14 +10,14 @@ import dotenv from "dotenv";
 dotenv.config();
 const app = express();
 
-try {
-  db.connect();
-} catch (error) {
-  app.use("", (req, res) => {
-    res.json({ message: 0 });
-    return;
-  });
-}
+// try {
+//   db.connect();
+// } catch (error) {
+//   app.use("", (req, res) => {
+//     res.json({ message: 0 });
+//     return;
+//   });
+// }
 app.use("", (req, res) => {
   res.json({ message: 2 });
 });
