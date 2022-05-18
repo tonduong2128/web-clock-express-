@@ -10,7 +10,7 @@ import dotenv from "dotenv";
 dotenv.config();
 const app = express();
 
-// db.connect();
+db.connect();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
