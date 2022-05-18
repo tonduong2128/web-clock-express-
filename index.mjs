@@ -10,7 +10,7 @@ import dotenv from "dotenv";
 dotenv.config();
 const app = express();
 
-db.connect();
+// db.connect();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,6 +27,11 @@ app.engine(
 app.set("view engine", ".hbs");
 app.set("views", "./src/views");
 
-routes(app);
+app.get("/", (req, res, next) => {
+  res.json("Hello");
+  return;
+});
+
+// routes(app);
 
 app.listen(3000);
