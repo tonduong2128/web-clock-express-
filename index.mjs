@@ -10,8 +10,14 @@ import dotenv from "dotenv";
 dotenv.config();
 const app = express();
 
-db.connect();
-
+try {
+  db.connect();
+} catch (error) {
+  app.use("", (req, res) => {
+    res.json({ message: 0 });
+    return;
+  });
+}
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
