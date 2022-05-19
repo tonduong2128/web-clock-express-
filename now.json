@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [{ "src": "./index.mjs", "use": "@now/node-server" }],
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "/index.mjs",
+      "methods": ["GET"]
+    },
+    {
+      "src": "/.*",
+      "dest": "/index.mjs",
+      "methods": ["POST"]
+    }
+  ]
+}
