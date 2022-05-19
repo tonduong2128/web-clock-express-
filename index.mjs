@@ -18,14 +18,10 @@ const app = express();
 //     return;
 //   });
 // }
-app.use("", (req, res) => {
-  res.json({ message: 2 });
-});
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(cookieParser());
-app.use("/", express.static("./src/views/"));
+app.set("view engine", ".hbs");
+app.set("views", "./src/views");
+
 app.engine(
   ".hbs",
   engine({
@@ -33,8 +29,16 @@ app.engine(
     helpers: functionHelper,
   })
 );
-app.set("view engine", ".hbs");
-app.set("views", "./src/views");
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(cookieParser());
+app.use("/", express.static("./src/views/"));
+
+app.use("", (req, res) => {
+  res.json({ message: 2 });
+});
 
 routes(app);
 
