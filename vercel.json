@@ -8,13 +8,13 @@
   ],
   "routes": [
     {
-      "src": "/.*",
-      "dest": "/index.mjs",
+      "src": "./.*",
+      "dest": "./",
       "methods": ["GET"]
     },
     {
-      "src": "/.*",
-      "dest": "/index.mjs",
+      "src": "./.*",
+      "dest": "./",
       "methods": ["POST"]
     }
   ]
